@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     The document type, and nothing else.
+
+     Everything else in the built Info.plist is still generated from build
+     settings (GENERATE_INFOPLIST_FILE stays on and merges its keys into this
+     file). Only the document type is here, because an exported type is an
+     array of dictionaries and there is no INFOPLIST_KEY_ setting that can say
+     one.
+
+     It lives at the repository root rather than inside PatchWork/PatchWork/:
+     that folder is a file-system-synchronized group, so anything in it is
+     added to the target automatically - and an Info.plist copied into the
+     bundle's Resources would be a second, meaningless plist.
+
+     The type conforms to public.json because that is what the file is. A
+     .pwork stays readable by anything that reads JSON; the conformance simply
+     says so rather than hiding it.
+-->
+<plist version="1.0">
+<dict>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>PatchWork Layout</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>TZorr.PatchWork.layout</string>
+			</array>
+		</dict>
+	</array>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>TZorr.PatchWork.layout</string>
+			<key>UTTypeDescription</key>
+			<string>PatchWork Layout</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.json</string>
+			</array>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>pwork</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
